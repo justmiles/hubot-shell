@@ -2,9 +2,6 @@
 #   Attaches node's child_process module to hubot for easy interaction with the host. Useful for a wide range of
 #     troubleshooting.
 #
-# Dependencies:
-#   hubot-slack - Currently only configured to work with the hubot-slack adapter
-#
 # Optional Dependencies:
 #   hubot-auth - Required to specify role for bash users. Defaults to allow anyone shell access.
 #
@@ -21,6 +18,7 @@
 
 cp = require 'child_process'
 
+# The below function is used to rate-limit messages being sent to Slack and other clients when streaming stdout
 respond = (msg, str, wrap = '```') ->
   len = 3000
   _size = Math.ceil(str.length / len)
@@ -44,7 +42,7 @@ respond = (msg, str, wrap = '```') ->
         x++
     ), 2000
 
-class SlackShell
+class HubotShell
 
   spawnCommand : (command, msg) ->
     args = command.split(' ')
@@ -98,7 +96,9 @@ class SlackShell
         respond msg, stderr
 
 module.exports = (robot) ->
-  shell = new SlackShell()
+
+  shell = new HubotShell()
+
   authorized = (msg) ->
     return true unless process.env.SHELL_ROLE? or process.env.SHELL_ROOM?
 
@@ -118,6 +118,6 @@ module.exports = (robot) ->
     return unless authorized(msg)
     shell.spawnCommand msg.match[2], msg
 
-  robot.respond /(shell|bash|exec) (.*)/i, (msg) ->
+  robot.respond /(bash|shell) (.*)/i, (msg) ->
     return unless authorized(msg)
     shell.execCommand msg.match[2], msg
