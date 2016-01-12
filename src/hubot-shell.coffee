@@ -10,8 +10,8 @@
 #   SHELL_ROOM - Limit shell commands to a specific room. Useful to peer review of actions
 #
 # Commands:
-#   hubot shell <command>  = Executes a subprocess and sends stdout upon completion. Waits for command to complete before responding.
-#   hubot spawn shell <command> = Spawns a subprocess and streams stdout back to chat. Useful for viewing stdout in real-time.
+#   hubot shell <command> - Executes a subprocess and sends stdout upon completion. Waits for command to complete before responding.
+#   hubot spawn shell <command> - Spawns a subprocess and streams stdout back to chat. Useful for viewing stdout in real-time.
 #
 # Author:
 #  justmiles
