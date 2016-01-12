@@ -1,0 +1,16 @@
+{
+  "name": "hubot-shell",
+  "version": "1.0.0",
+  "description": "Execute shell commands with your hubot.",
+  "main": "./src/hubot-shell.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hubot",
+    "shell",
+    "hubot-shell"
+  ],
+  "author": "justMiles",
+  "license": "MIT"
+}
