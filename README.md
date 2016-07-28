@@ -15,7 +15,7 @@ Attaches node's child_process module to hubot for easy interaction with the host
 ## Usage:
 
 ```bash
-justmiles> shell ping 8.8.8.8 -c 3
+justmiles> shell shell ping 8.8.8.8 -c 3
 
 hubot> PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=43 time=8.22 ms
