@@ -6,7 +6,7 @@ Attaches node's child_process module to hubot for easy interaction with the host
 
 ## Configuration:
  - SHELL_ROLE - Role authorized to execute shell commands from hubot. Requires hubot-auth
- - SHELL_ROOM - Limit shell commands to a specific room. Useful to peer review of actions
+ - SHELL_ROOM - Limit shell commands to a specific room. Useful to peer review actions
 
 ## Commands:
  - hubot shell `command` - Executes a subprocess and sends stdout upon completion. Waits for command to complete before responding.
